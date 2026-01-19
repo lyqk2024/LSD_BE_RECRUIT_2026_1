@@ -22,21 +22,23 @@ public class EmployeeManagementSystem {
     }
 }
 
+interface Payable {
+    /**
+     * 计算薪资
+     */
+    double calculateSalary();
+}
+
 /**
  * 员工父类
  */
-abstract class Employee {
+abstract class Employee implements Payable{
 
     private String name;
 
     public Employee(String name) {
         this.name = name;
     }
-
-    /**
-     * 计算员工工资（或奖金）
-     */
-    public abstract double calculateSalary();
 
     /**
      * 打印员工信息
